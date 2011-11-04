@@ -1,42 +1,42 @@
 <html>
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-		<script src="/socket.io/socket.io.js"></script>
-		<script>
-		  var socket = io.connect('http://localhost:81');
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect('http://localhost:81');
 
-		  socket.on('change', function(data){
-				//document.write(data)
-				$('#changes').prepend('<div class="change" style="margin-top:-50px">'+data+'</div>').find('.change:first').animate({'margin-top':0});
-			})
-		</script>
-		<style type="text/css" media="screen">
-		  *{
-			padding:0;margin:0;
-		}
-			body{
-				background:#f1f1f1;
-				font-family:arial;
-				font-size:13px;
-			}
-			#changes{
-				float:left;
-				width:100%;
-			}
-			.change{
-				background:#fff;
-				width:100%;
-				padding:10px 0;
-				border-bottom:1px solid #333;
-				font-size:25px;
-				text-indent:20px;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="changes">
-			
-		</div>
-		
-	</body>
+      socket.on('change', function(data){
+        //document.write(data)
+        $('#changes').prepend('<div class="change" style="margin-top:-50px">'+data+'</div>').find('.change:first').animate({'margin-top':0});
+      })
+    </script>
+    <style type="text/css" media="screen">
+      *{
+      padding:0;margin:0;
+    }
+      body{
+        background:#f1f1f1;
+        font-family:arial;
+        font-size:13px;
+      }
+      #changes{
+        float:left;
+        width:100%;
+      }
+      .change{
+        background:#fff;
+        width:100%;
+        padding:10px 0;
+        border-bottom:1px solid #333;
+        font-size:25px;
+        text-indent:20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="changes">
+      
+    </div>
+    
+  </body>
 </html>
