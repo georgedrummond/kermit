@@ -21,4 +21,4 @@ Kermit = do ->
 	watch = (file) ->
 		fs.watchFile file, {interval:100}, (current, previous) ->
 	  	console.log '  --> '+file+' was changed'
-	  	io.sockets.emit 'change', file
+	  	io.sockets.emit 'change', file+' - @ '+current.mtime
